@@ -13,28 +13,29 @@ firebase_admin.initialize_app(cred, {"databaseURL": "https://salty-mediterranean
 
 @app.route("/", methods=["GET"])
 def index():
-  ref = db.reference("/testing")
-  testPlanResults = ref.get()
-  if (testPlanResults != None):
-    df = pd.DataFrame.from_records(testPlanResults)
-    print(df)
+  # ref = db.reference("/testing")
+  # testPlanResults = ref.get()
+  # if (testPlanResults != None):
+  #   df = pd.DataFrame.from_records(testPlanResults)
+  #   print(df)
 
-    fig = px.line(df, x="WaterTemperature", y="TDS", title="Water Temperature VS TDS")
+  #   fig = px.line(df, x="WaterTemperature", y="TDS", title="Water Temperature VS TDS")
 
-    fig1JSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+  #   fig1JSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
-    dictResponce = {"fig1JSON": fig1JSON, "lastEpoch": str(df.iloc[-1]["EpochTime"])}
-    jsonFromDict = json.dumps(dictResponce, indent=4)
-    response = make_response(jsonFromDict, 200)
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    return response
+  #   dictResponce = {"fig1JSON": fig1JSON, "lastEpoch": str(df.iloc[-1]["EpochTime"])}
+  #   jsonFromDict = json.dumps(dictResponce, indent=4)
+  #   response = make_response(jsonFromDict, 200)
+  #   response.headers.add('Access-Control-Allow-Origin', '*')
+  #   return response
   
-  else:
-    response = make_response("", 200)
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    return response
+  # else:
+  #   response = make_response("", 200)
+  #   response.headers.add('Access-Control-Allow-Origin', '*')
+  #   return response
+  return "<h1>Welcome to Geeks for Geeks</h1>"
 
 
 
 if __name__ == "__main__":
-  app.run(debug=True)
+  app.run()
