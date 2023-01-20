@@ -1,26 +1,39 @@
 <template>
-  <!-- <nav>
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-  </nav> -->
-  <main class="row gx-5 gy-0">
-    <!-- <main id="main"> -->
+  <transition name="fade" mode="out-in">
+    <loading-screen
+      v-if="loadingScreenOn"
+      :LoadingScreenTime="loadingScreenTime"
+    />
+  </transition>
+
+  <main class="row g-0">
     <div
       id="nav-container"
       class="col-2 animate__animated animate__faster animate__slideInLeft"
-      v-if="nav_open"
+      v-if="navOpen"
     >
       <aside
-        id="nav-container"
+        id="nav-container-aside"
         class="animate__animated animate__slideInLeft"
-        v-if="nav_open"
+        v-if="navOpen"
       >
         <nav>
+          <div class="logo-aside display-3">
+            <span>I</span>
+            <img src="./assets/imgs/logo_O_part.png" alt="IoT Logo" />
+            <span>T</span>
+          </div>
           <h1 class="fs-4">Salty Mediterranean</h1>
           <hr class="my-5" />
           <ul>
             <li :class="$route.path == '/' ? 'active' : ''">
-              <router-link to="/">
+              <router-link
+                to="/"
+                @click="
+                  navOpen && smallScreen ? articleBackdropClicked() : '';
+                  playLoadingScreen();
+                "
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                   <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                   <path
@@ -30,19 +43,48 @@
                 Home
               </router-link>
             </li>
+            <li :class="$route.path == '/results' ? 'active' : ''">
+              <router-link
+                to="/results"
+                @click="
+                  navOpen && smallScreen ? articleBackdropClicked() : '';
+                  playLoadingScreen();
+                "
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm64 192c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V256c0-17.7 14.3-32 32-32zm64-64c0-17.7 14.3-32 32-32s32 14.3 32 32V352c0 17.7-14.3 32-32 32s-32-14.3-32-32V160zM320 288c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32s-32-14.3-32-32V320c0-17.7 14.3-32 32-32z"
+                  />
+                </svg>
+                Results
+              </router-link>
+            </li>
             <li :class="$route.path == '/testing' ? 'active' : ''">
-              <router-link to="/testing">
+              <router-link
+                to="/testing"
+                @click="
+                  navOpen && smallScreen ? articleBackdropClicked() : '';
+                  playLoadingScreen();
+                "
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                   <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                   <path
                     d="M175 389.4c-9.8 16-15 34.3-15 53.1c-10 3.5-20.8 5.5-32 5.5c-53 0-96-43-96-96V64C14.3 64 0 49.7 0 32S14.3 0 32 0H96h64 64c17.7 0 32 14.3 32 32s-14.3 32-32 32V309.9l-49 79.6zM96 64v96h64V64H96zM352 0H480h32c17.7 0 32 14.3 32 32s-14.3 32-32 32V214.9L629.7 406.2c6.7 10.9 10.3 23.5 10.3 36.4c0 38.3-31.1 69.4-69.4 69.4H261.4c-38.3 0-69.4-31.1-69.4-69.4c0-12.8 3.6-25.4 10.3-36.4L320 214.9V64c-17.7 0-32-14.3-32-32s14.3-32 32-32h32zm32 64V224c0 5.9-1.6 11.7-4.7 16.8L330.5 320h171l-48.8-79.2c-3.1-5-4.7-10.8-4.7-16.8V64H384z"
                   />
                 </svg>
-                Testing
+                Live Testing
               </router-link>
             </li>
             <li :class="$route.path == '/about' ? 'active' : ''">
-              <router-link to="/about">
+              <router-link
+                to="/about"
+                @click="
+                  navOpen && smallScreen ? articleBackdropClicked() : '';
+                  playLoadingScreen();
+                "
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                   <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                   <path
@@ -54,7 +96,7 @@
             </li>
             <div class="indicator"></div>
           </ul>
-          <button id="close-aside" @click="toggleNav">
+          <button id="close-aside" @click="toggleNav(true)">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
               <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
               <path
@@ -66,8 +108,11 @@
       </aside>
     </div>
     <div class="col">
-      <article>
-        <div class="container mx-auto">
+      <article
+        id="article"
+        @click="navOpen && smallScreen ? articleBackdropClicked() : ''"
+      >
+        <div class="mx-auto">
           <router-view v-slot="{ Component }">
             <transition name="fade" mode="out-in">
               <component :is="Component"></component>
@@ -77,7 +122,7 @@
       </article>
     </div>
   </main>
-  <button id="open-aside" @click="toggleNav" v-if="!nav_open">
+  <button id="open-aside" @click="toggleNav(true)" v-if="!navOpen">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
       <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
       <path
@@ -88,27 +133,108 @@
 </template>
 
 <script>
+import LoadingScreen from "@/components/LoadingScreen.vue";
+
 export default {
+  components: {
+    LoadingScreen,
+  },
   data() {
     return {
-      nav_open: true,
-      // asideToggled: new Event("asideToggled"),
+      navOpen: true,
+      toggledByUser: false,
+      smallScreen: false,
+      loadingScreenOn: true,
+      loadingScreenTime: 750,
     };
   },
   methods: {
-    toggleNav() {
+    toggleNav(byUser = false) {
       let navContainer = document.getElementById("nav-container");
-      if (this.nav_open == true) {
+      if (this.navOpen == true) {
         navContainer.classList.add("animate__slideOutLeft");
         setTimeout(() => {
-          this.nav_open = !this.nav_open;
-          // document.dispatchEvent(this.asideToggled);
+          this.navOpen = !this.navOpen;
+          document
+            .getElementById("article")
+            .classList.remove("small-screen-backdrop");
         }, 230);
       } else {
-        this.nav_open = !this.nav_open;
-        // document.dispatchEvent(this.asideToggled);
+        this.navOpen = !this.navOpen;
+        if (this.smallScreen) {
+          document
+            .getElementById("article")
+            .classList.add("small-screen-backdrop");
+        }
+      }
+      setTimeout(() => {
+        this.toggledByUser = byUser;
+        window.dispatchEvent(new Event("resize"));
+      }, 351);
+    },
+    autoCloseNav() {
+      let vw = Math.max(
+        document.documentElement.clientWidth || 0,
+        window.innerWidth || 0
+      );
+      let col_3 = (vw / 12) * 2;
+      console.log(col_3);
+      if (col_3 < 250) {
+        this.smallScreen = true;
+        if (document.getElementById("nav-container-aside")) {
+          document
+            .getElementById("nav-container")
+            .classList.add("small-screen");
+          document
+            .getElementById("nav-container-aside")
+            .classList.add("small-screen");
+        }
+        if (this.navOpen == true && this.toggledByUser == false) {
+          this.toggleNav();
+        }
+      } else {
+        this.smallScreen = false;
+        if (document.getElementById("nav-container-aside")) {
+          document
+            .getElementById("nav-container")
+            .classList.remove("small-screen");
+          document
+            .getElementById("nav-container-aside")
+            .classList.remove("small-screen");
+        }
+      }
+      if (this.navOpen == true && this.smallScreen == false) {
+        document
+          .getElementById("article")
+          .classList.remove("small-screen-backdrop");
+      } else if (this.navOpen == true && this.smallScreen == true) {
+        document
+          .getElementById("article")
+          .classList.add("small-screen-backdrop");
       }
     },
+    articleBackdropClicked() {
+      console.log("articleBackdropClicked");
+      this.toggleNav(true);
+    },
+    playLoadingScreen() {
+      this.loadingScreenOn = true;
+      setTimeout(() => {
+        this.loadingScreenOn = false;
+      }, this.loadingScreenTime);
+    },
+  },
+  mounted() {
+    this.playLoadingScreen();
+    let local_autoCloseNav = this.autoCloseNav;
+    local_autoCloseNav();
+    window.addEventListener(
+      "resize",
+      () => {
+        local_autoCloseNav();
+      },
+      true
+    );
   },
 };
 </script>
@@ -117,6 +243,7 @@ export default {
 @import "./assets/scss/_variables";
 // @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 
 * {
   margin: 0;
@@ -152,16 +279,32 @@ body {
 
 main {
   height: 100%;
-  // display: flex;
   position: relative;
+  div#nav-container {
+    z-index: 10;
+    padding-right: 0.5rem;
+    &.small-screen {
+      padding-right: 0;
+      width: 0;
+    }
+  }
   aside {
     --animate-duration: 0.35s;
     padding: 1rem;
-    width: 17.5vw;
-    min-width: 300px;
+    width: 100%;
     height: 100%;
     text-align: center;
     display: block;
+    &.small-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 90vw;
+      min-width: 300px;
+      max-width: 400px;
+      margin-left: 1rem;
+      z-index: 10;
+    }
     nav {
       height: 100%;
       background-color: darken($color: $bg-color, $amount: 3);
@@ -169,14 +312,27 @@ main {
       border-radius: 2rem;
       padding: 2rem;
       position: relative;
+      .logo-aside {
+        color: $logo-aside-color;
+        font-family: "Varela Round", sans-serif;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        span:nth-child(1),
+        img {
+          margin-right: 0.5rem;
+        }
+        img {
+          display: inline;
+          width: 3rem;
+          padding-bottom: 0.7rem;
+        }
+      }
       ul {
         list-style: none;
         padding: 0;
         position: relative;
         li {
           margin-top: 1rem;
-          padding-top: 0.5rem;
-          padding-bottom: 0.5rem;
           border-radius: 5px;
           width: 100%;
           position: relative;
@@ -184,6 +340,10 @@ main {
           a {
             text-decoration: none;
             color: black;
+            display: inline-block;
+            width: 100%;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
             &:hover {
               color: darken($color: $main-color, $amount: 10);
             }
@@ -195,11 +355,11 @@ main {
             }
           }
           &.active a {
-            color: black !important;
+            color: $logo-aside-color !important;
           }
-          @for $i from 1 through 3 {
+          @for $i from 1 through 4 {
             &:nth-child(#{$i}).active ~ .indicator {
-              transform: translateY(calc(56px * #{$i - 1}));
+              transform: translateY(calc(56.75px * #{$i - 1}));
             }
           }
         }
@@ -220,11 +380,30 @@ main {
   article {
     padding: 3rem;
     transition: 0.2s;
-    overflow-y: scroll;
-    height: 99vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100vh;
     width: 100%;
+    position: relative;
+    z-index: 0;
+    @media (max-width: 991.98px) {
+      padding: 1rem;
+      padding-bottom: 2.5rem;
+    }
+    &.small-screen-backdrop {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0, 0.5);
+      }
+    }
   }
 }
+
 #close-aside,
 #open-aside {
   position: absolute;
