@@ -1,7 +1,7 @@
 # Salty Mediterranean
 *Grade 12 Capstone Project*
 
-#### Note
+### Note
 This project consists of **3 major parts**:
 1. Website
 2. Python API
@@ -26,3 +26,7 @@ This project consists of **3 major parts**:
  - "*DHT sensor library*" by Adafruit - V1.4.4
  - "*Firebase Arduino Client Library for ESP8266 and ESP32*" by Mobizt - V4.3.3
  - "*OneWire*" by Jim Studt, Tom Pollard - V2.3.7
+
+## System Diagram
+> made by [Fritzing](https://fritzing.org/)
+> [![Fritzing](https://img.shields.io/badge/d7332d?&logoColor=white&style=flat-square)]([https://firebase.google.com/](https://fritzing.org/))
