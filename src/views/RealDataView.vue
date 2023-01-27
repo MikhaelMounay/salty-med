@@ -43,10 +43,12 @@ export default {
       }
     }
   }
-
   iframe {
     width: 100%;
-    height: 100%;
+    height: 550px;
+    min-height: 300px;
+    padding: 0.15rem;
+    resize: vertical;
   }
 }
 </style>
