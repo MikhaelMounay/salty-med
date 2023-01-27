@@ -9,6 +9,8 @@ This project consists of **3 major parts**:
 
 *Each part has its own ***branch*** in this repo*
 
+## System Diagram
+> made by [![Fritzing](https://img.shields.io/badge/-Fritzing-d7332d?style=flat-square)](https://fritzing.org/)
 
 ## Used Techs / Services
  - [![Arduino IDE](https://img.shields.io/badge/-Arduino%20IDE-00979D?logo=Arduino&logoColor=white&style=flat-square)](https://www.arduino.cc/)
@@ -26,6 +28,3 @@ This project consists of **3 major parts**:
  - "*DHT sensor library*" by Adafruit - V1.4.4
  - "*Firebase Arduino Client Library for ESP8266 and ESP32*" by Mobizt - V4.3.3
  - "*OneWire*" by Jim Studt, Tom Pollard - V2.3.7
-
-## System Diagram
-> made by [![Fritzing](https://img.shields.io/badge/-Fritzing-d7332d?style=flat-square)](https://fritzing.org/)
