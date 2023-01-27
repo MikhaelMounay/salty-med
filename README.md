@@ -11,6 +11,9 @@ This project consists of **3 major parts**:
 *Each part has its own ***branch*** in this repo*
 
 
+# ***3. Hardware Sketch***
+
+
 ## System Diagram
 > made by [![Fritzing](https://img.shields.io/badge/-Fritzing-d7332d?style=flat-square)](https://fritzing.org/)
 
