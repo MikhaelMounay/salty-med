@@ -49,7 +49,7 @@ This project consists of **3 major parts**:
 
 
 ## Used Techs / Services
- - [![C/C++](https://img.shields.io/badge/-C%2FC%2B%2B-00979D?logo=C%2B%2B+&logoColor=white&style=flat-square)]()
+ - [![C/C++](https://img.shields.io/badge/-C%2FC%2B%2B-00979D?logo=Cplusplus+&logoColor=white&style=flat-square)]()
  - [![Arduino IDE](https://img.shields.io/badge/-Arduino%20IDE-00979D?logo=Arduino&logoColor=white&style=flat-square)](https://www.arduino.cc/)
  - [![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?logo=Firebase&logoColor=white&style=flat-square)](https://firebase.google.com/)
 
