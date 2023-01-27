@@ -11,11 +11,18 @@ This project consists of **3 major parts**:
 
 
 ## Used Techs / Services
- -  [![Arduino](https://img.shields.io/badge/-Arduino-00979D?logo=Arduino&logoColor=white&style=flat-square)](https://www.arduino.cc/)
-
- -  ![HTML](https://img.shields.io/badge/-HTML5-E34F26?logo=HTML5&logoColor=white&style=flat-square)  ![CSS](https://img.shields.io/badge/-CSS3-1572B6?logo=CSS3&logoColor=white&style=flat-square)  ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=JavaScript&logoColor=white&style=flat-square)
- -  [![Vue JS 3](https://img.shields.io/badge/-Vue.js%205-4FC08D?logo=Vue.js&logoColor=white&style=flat-square)](https://vuejs.org/)  [![Vue CLI 5](https://img.shields.io/badge/-Vue%20CLI%205-4FC08D?logo=Vue.js&logoColor=white&style=flat-square)](https://cli.vuejs.org/)
- - [![Sass](https://img.shields.io/badge/-Sass-CC6699?logo=Sass&logoColor=white&style=flat-square)](https://sass-lang.com/)
- - [![Bootstrap 5](https://img.shields.io/badge/-Bootstrap-7952B3?logo=Bootstrap&logoColor=white&style=flat-square)](https://getbootstrap.com/)
+ - [![Arduino IDE](https://img.shields.io/badge/-Arduino%20IDE-00979D?logo=Arduino&logoColor=white&style=flat-square)](https://www.arduino.cc/)
  - [![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?logo=Firebase&logoColor=white&style=flat-square)](https://firebase.google.com/)
- - [![Python](https://img.shields.io/badge/-Python-3776AB?logo=Python&logoColor=white&style=flat-square)](https://www.python.org/)  [![pandas](https://img.shields.io/badge/-pandas-150458?logo=pandas&logoColor=white&style=flat-square)](https://pandas.pydata.org/)  [![scikit-learn](https://img.shields.io/badge/-scikitlearn-F7931E?logo=scikitlearn&logoColor=white&style=flat-square)](https://scikit-learn.org/stable/)  [![Plotly](https://img.shields.io/badge/-Plotly-3F4F75?logo=Plotly&logoColor=white&style=flat-square)](https://plotly.com/)  [![Flask](https://img.shields.io/badge/-Flask-000000?logo=Flask&logoColor=white&style=flat-square)](https://flask.palletsprojects.com/)
+
+*Board*:
+ - "*NodeMCU 1.0 (ESP-12E Module)*"
+
+> found in this [additional boards package](http://arduino.esp8266.com/stable/package_esp8266com_index.json)
+
+*Libraries*:
+ - "*NTPClient*" by Fabrice Weinberg - V3.2.1
+ - "*Adafruit Unified Sensor*" by Adafruit - V1.1.7
+ - "*Dallas Temperature*" by Miles Burton. Tim Newsome - V3.9.0
+ - "*DHT sensor library*" by Adafruit - V1.4.4
+ - "*Firebase Arduino Client Library for ESP8266 and ESP32*" by Mobizt - V4.3.3
+ - "*OneWire*" by Jim Studt, Tom Pollard - V2.3.7
