@@ -38,3 +38,32 @@ This project consists of **3 major parts**:
  - [![Gunicorn](https://img.shields.io/badge/-Gunicorn-499848?logo=Gunicorn&logoColor=white&style=flat-square)](https://gunicorn.org/)
 
 
+
+# ***3. Hardware Sketch***
+
+
+## System Diagram
+> made by [![Fritzing](https://img.shields.io/badge/-Fritzing-d7332d?style=flat-square)](https://fritzing.org/)
+
+![System Diagram](https://github.com/MikhaelMounay/salty-med/blob/70edb213d6eb5ac933b87b426cf94397d800b1fa/system_diagram.png)
+
+
+## Used Techs / Services
+ - [![Arduino IDE](https://img.shields.io/badge/-Arduino%20IDE-00979D?logo=Arduino&logoColor=white&style=flat-square)](https://www.arduino.cc/)
+ - [![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?logo=Firebase&logoColor=white&style=flat-square)](https://firebase.google.com/)
+
+
+#### *Board*:
+ - "*NodeMCU 1.0 (ESP-12E Module)*"
+
+> found in this [additional boards package](http://arduino.esp8266.com/stable/package_esp8266com_index.json)
+
+
+#### *Libraries*:
+ - "*NTPClient*" by Fabrice Weinberg - V3.2.1
+ - "*Adafruit Unified Sensor*" by Adafruit - V1.1.7
+ - "*Dallas Temperature*" by Miles Burton. Tim Newsome - V3.9.0
+ - "*DHT sensor library*" by Adafruit - V1.4.4
+ - "*Firebase Arduino Client Library for ESP8266 and ESP32*" by Mobizt - V4.3.3
+ - "*OneWire*" by Jim Studt, Tom Pollard - V2.3.7
+
