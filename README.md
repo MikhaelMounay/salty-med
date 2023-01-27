@@ -29,4 +29,4 @@ This project consists of **3 major parts**:
 
 ## System Diagram
 > made by [Fritzing](https://fritzing.org/)
-> [![Fritzing](https://img.shields.io/badge/d7332d?&logoColor=white&style=flat-square)]([https://firebase.google.com/](https://fritzing.org/))
+> [![Fritzing](https://img.shields.io/badge/--d7332d?style=flat-square)](https://fritzing.org/)
