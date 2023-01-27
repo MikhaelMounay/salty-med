@@ -3,7 +3,7 @@
 
 ### Note
 This project consists of **3 major parts**:
-1. ***Website***
+1. Website
 2. Python API
 3. Hardware Sketch
 
