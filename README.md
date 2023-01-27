@@ -9,6 +9,7 @@ This project consists of **3 major parts**:
 
 *Each part has its own ***branch*** in this repo*
 
+
 # ***1. Website***
 
 ## Used Techs / Services
@@ -17,4 +18,4 @@ This project consists of **3 major parts**:
  - [![Sass](https://img.shields.io/badge/-Sass-CC6699?logo=Sass&logoColor=white&style=flat-square)](https://sass-lang.com/)
  - [![Bootstrap 5](https://img.shields.io/badge/-Bootstrap-7952B3?logo=Bootstrap&logoColor=white&style=flat-square)](https://getbootstrap.com/)
  - [![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?logo=Firebase&logoColor=white&style=flat-square)](https://firebase.google.com/)
- - [![Python](https://img.shields.io/badge/-Python-3776AB?logo=Python&logoColor=white&style=flat-square)](https://www.python.org/)  [![pandas](https://img.shields.io/badge/-pandas-150458?logo=pandas&logoColor=white&style=flat-square)](https://pandas.pydata.org/)  [![scikit-learn](https://img.shields.io/badge/-scikitlearn-F7931E?logo=scikitlearn&logoColor=white&style=flat-square)](https://scikit-learn.org/stable/)  [![Plotly](https://img.shields.io/badge/-Plotly-3F4F75?logo=Plotly&logoColor=white&style=flat-square)](https://plotly.com/)  [![Flask](https://img.shields.io/badge/-Flask-000000?logo=Flask&logoColor=white&style=flat-square)](https://flask.palletsprojects.com/)
+
