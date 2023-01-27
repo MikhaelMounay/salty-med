@@ -28,5 +28,4 @@ This project consists of **3 major parts**:
  - "*OneWire*" by Jim Studt, Tom Pollard - V2.3.7
 
 ## System Diagram
-> made by [Fritzing](https://fritzing.org/)
 > [![Fritzing](https://img.shields.io/badge/-Fritzing-d7332d?style=flat-square)](https://fritzing.org/)
