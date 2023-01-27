@@ -11,6 +11,7 @@ This project consists of **3 major parts**:
 
 ## System Diagram
 > made by [![Fritzing](https://img.shields.io/badge/-Fritzing-d7332d?style=flat-square)](https://fritzing.org/)
+![System Diagram](https://github.com/MikhaelMounay/salty-med/blob/70edb213d6eb5ac933b87b426cf94397d800b1fa/system_diagram.png)
 
 ## Used Techs / Services
  - [![Arduino IDE](https://img.shields.io/badge/-Arduino%20IDE-00979D?logo=Arduino&logoColor=white&style=flat-square)](https://www.arduino.cc/)
