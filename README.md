@@ -1,5 +1,6 @@
 # Salty Mediterranean
 *Grade 12 Capstone Project*
+[**Project Files - _Google Drive_**](https://drive.google.com/drive/folders/1Sovq3OB_-J1gDgjgbsQqczefiaZ3ZM5N?usp=share_link)
 
 ### Note
 This project consists of **3 major parts**:
